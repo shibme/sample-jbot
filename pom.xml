@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
@@ -7,7 +7,7 @@
     <artifactId>sample-jbot</artifactId>
     <version>0.1</version>
     <name>Sample Bot</name>
-    <description>A sample telegram bot with JBots framewok</description>
+    <description>A sample telegram bot with JBots framework</description>
     <url>https://github.com/shibme/sample-jbot</url>
 
     <issueManagement>
@@ -128,11 +128,6 @@
             <groupId>me.shib.java.lib</groupId>
             <artifactId>jbots</artifactId>
             <version>0.5.3</version>
-        </dependency>
-        <dependency>
-            <groupId>me.shib.java.lib</groupId>
-            <artifactId>jbotan</artifactId>
-            <version>0.1.1</version>
         </dependency>
     </dependencies>
 
