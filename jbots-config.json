@@ -1,0 +1,16 @@
+[
+  {
+	"botApiToken": "YourBotApiTokenGoesHere",
+	"botModelClassName": "me.shib.java.app.sample.SampleBot",
+	"commandList": ["/start","/help","/status","/scr"],
+	"threadCount": 4,
+	"defaultWorkerDisabled": true,
+	"adminIdList": [0, 0],
+	"reportIntervalInSeconds": 86400,
+	  "constants": {
+		  "key1": "value1",
+		  "key2": "value2",
+		  "key3": "value3"
+	  }
+  }
+]
