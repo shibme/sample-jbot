@@ -2,6 +2,7 @@ package me.shib.java.app.sample;
 
 import me.shib.java.lib.jbots.JBot;
 import me.shib.java.lib.jbots.JBotConfig;
+import me.shib.java.lib.jbots.MessageHandler;
 import me.shib.java.lib.jtelebot.types.ChatId;
 import me.shib.java.lib.jtelebot.types.ChosenInlineResult;
 import me.shib.java.lib.jtelebot.types.InlineQuery;
@@ -16,30 +17,48 @@ public final class SampleBot extends JBot {
     }
 
     @Override
-    public Message onMessageFromAdmin(Message message) {
-        try {
-            return bot.sendMessage(new ChatId(message.getChat().getId()), "Received message from admin");
-        } catch (IOException e) {
-            return null;
-        }
-    }
+    public MessageHandler onMessage(Message message) {
+        return new MessageHandler(message) {
+            @Override
+            public boolean onCommandFromAdmin(String command) {
+                try {
+                    bot.sendMessage(new ChatId(message.getChat().getId()), "Received command from Admin: " + message.getText());
+                    return true;
+                } catch (IOException e) {
+                    return false;
+                }
+            }
 
-    @Override
-    public Message onCommand(Message message) {
-        try {
-            return bot.sendMessage(new ChatId(message.getChat().getId()), "Received command: " + message.getText());
-        } catch (IOException e) {
-            return null;
-        }
-    }
+            @Override
+            public boolean onCommandFromUser(String command) {
+                try {
+                    bot.sendMessage(new ChatId(message.getChat().getId()), "Received command from User: " + message.getText());
+                    return true;
+                } catch (IOException e) {
+                    return false;
+                }
+            }
 
-    @Override
-    public Message onReceivingMessage(Message message) {
-        try {
-            return bot.sendMessage(new ChatId(message.getChat().getId()), "Received message from user");
-        } catch (IOException e) {
-            return null;
-        }
+            @Override
+            public boolean onMessageFromAdmin() {
+                try {
+                    bot.sendMessage(new ChatId(message.getChat().getId()), "Received message from Admin");
+                    return true;
+                } catch (IOException e) {
+                    return false;
+                }
+            }
+
+            @Override
+            public boolean onMessageFromUser() {
+                try {
+                    bot.sendMessage(new ChatId(message.getChat().getId()), "Received message from user");
+                    return true;
+                } catch (IOException e) {
+                    return false;
+                }
+            }
+        };
     }
 
     @Override
@@ -52,8 +71,4 @@ public final class SampleBot extends JBot {
         return false;
     }
 
-    @Override
-    public Message sendStatusMessage(long chatId) {
-        return null;
-    }
 }
