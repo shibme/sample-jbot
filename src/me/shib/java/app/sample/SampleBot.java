@@ -3,10 +3,11 @@ package me.shib.java.app.sample;
 import me.shib.java.lib.jbots.JBot;
 import me.shib.java.lib.jbots.JBotConfig;
 import me.shib.java.lib.jbots.MessageHandler;
-import me.shib.java.lib.jtelebot.types.ChatId;
-import me.shib.java.lib.jtelebot.types.ChosenInlineResult;
-import me.shib.java.lib.jtelebot.types.InlineQuery;
-import me.shib.java.lib.jtelebot.types.Message;
+import me.shib.java.lib.jtelebot.models.types.ChatId;
+import me.shib.java.lib.jtelebot.models.updates.CallbackQuery;
+import me.shib.java.lib.jtelebot.models.updates.ChosenInlineResult;
+import me.shib.java.lib.jtelebot.models.updates.InlineQuery;
+import me.shib.java.lib.jtelebot.models.updates.Message;
 
 import java.io.IOException;
 
@@ -68,6 +69,11 @@ public final class SampleBot extends JBot {
 
     @Override
     public boolean onChosenInlineResult(ChosenInlineResult chosenInlineResult) {
+        return false;
+    }
+
+    @Override
+    public boolean onCallbackQuery(CallbackQuery callbackQuery) {
         return false;
     }
 
