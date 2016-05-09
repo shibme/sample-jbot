@@ -21,7 +21,7 @@ public final class SampleBot extends JBot {
     public MessageHandler onMessage(Message message) {
         return new MessageHandler(message) {
             @Override
-            public boolean onCommandFromAdmin(String command) {
+            public boolean onCommandFromAdmin(String command, String argument) {
                 try {
                     bot.sendMessage(new ChatId(message.getChat().getId()), "Received command from Admin: " + message.getText());
                     return true;
@@ -31,7 +31,7 @@ public final class SampleBot extends JBot {
             }
 
             @Override
-            public boolean onCommandFromUser(String command) {
+            public boolean onCommandFromUser(String command, String argument) {
                 try {
                     bot.sendMessage(new ChatId(message.getChat().getId()), "Received command from User: " + message.getText());
                     return true;
