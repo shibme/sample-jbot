@@ -5,7 +5,7 @@
 
     <groupId>me.shib.java.app</groupId>
     <artifactId>sample-jbot</artifactId>
-    <version>0.2</version>
+    <version>0.2.1</version>
     <name>Sample Bot</name>
     <description>A sample telegram bot with JBots framework</description>
     <url>https://github.com/shibme/sample-jbot</url>
@@ -127,7 +127,7 @@
         <dependency>
             <groupId>me.shib.java.lib</groupId>
             <artifactId>jbots</artifactId>
-            <version>0.7</version>
+            <version>0.8.0</version>
         </dependency>
     </dependencies>
 

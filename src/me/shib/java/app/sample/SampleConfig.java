@@ -1,17 +1,11 @@
-# Sample Bot
-[![Build Status](https://travis-ci.org/shibme/sample-jbot.svg)](https://travis-ci.org/shibme/sample-jbot)
-[![Dependency Status](https://www.versioneye.com/user/projects/56d5faead716950040a0e4bd/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56d5faead716950040a0e4bd)
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/shibme/sample-jbot.svg)](http://isitmaintained.com/project/shibme/sample-jbot "Percentage of issues still open")
+package me.shib.java.app.sample;
 
-A sample telegram bot with JBots framework
+import me.shib.java.lib.jbots.JBot;
+import me.shib.java.lib.jbots.JBotConfig;
+import me.shib.java.lib.jbotstats.BotStatsConfig;
 
-### How to begin
-* Fork or clone this repo and modify the SampleBot java file and try creating a bot on your own.
-* Make sure you create the config class by extending me.shib.java.lib.jbots.JBotConfig as discussed below.
-* Once you're done creating the bot's model code and the config file, just run `mvn clean install` command to generate a runnable jar file which will be available inside the `target/` directory.
+import java.util.HashMap;
 
-### Configuration for Bot Owners
-```java
 public class SampleConfig extends JBotConfig {
     @Override
     public String botApiToken() {
@@ -63,4 +57,3 @@ public class SampleConfig extends JBotConfig {
         return super.botStatsConfig();
     }
 }
-```

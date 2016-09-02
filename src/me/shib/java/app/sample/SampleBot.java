@@ -23,7 +23,7 @@ public final class SampleBot extends JBot {
             @Override
             public boolean onCommandFromAdmin(String command, String argument) {
                 try {
-                    bot.sendMessage(new ChatId(message.getChat().getId()), "Received command from Admin: " + message.getText());
+                    bot().sendMessage(new ChatId(message.getChat().getId()), "Received command from Admin: " + message.getText());
                     return true;
                 } catch (IOException e) {
                     return false;
@@ -33,7 +33,7 @@ public final class SampleBot extends JBot {
             @Override
             public boolean onCommandFromUser(String command, String argument) {
                 try {
-                    bot.sendMessage(new ChatId(message.getChat().getId()), "Received command from User: " + message.getText());
+                    bot().sendMessage(new ChatId(message.getChat().getId()), "Received command from User: " + message.getText());
                     return true;
                 } catch (IOException e) {
                     return false;
@@ -43,7 +43,7 @@ public final class SampleBot extends JBot {
             @Override
             public boolean onMessageFromAdmin() {
                 try {
-                    bot.sendMessage(new ChatId(message.getChat().getId()), "Received message from Admin");
+                    bot().sendMessage(new ChatId(message.getChat().getId()), "Received message from Admin");
                     return true;
                 } catch (IOException e) {
                     return false;
@@ -53,7 +53,7 @@ public final class SampleBot extends JBot {
             @Override
             public boolean onMessageFromUser() {
                 try {
-                    bot.sendMessage(new ChatId(message.getChat().getId()), "Received message from user");
+                    bot().sendMessage(new ChatId(message.getChat().getId()), "Received message from user");
                     return true;
                 } catch (IOException e) {
                     return false;
@@ -63,18 +63,15 @@ public final class SampleBot extends JBot {
     }
 
     @Override
-    public boolean onInlineQuery(InlineQuery query) {
-        return false;
+    public void onInlineQuery(InlineQuery query) {
     }
 
     @Override
-    public boolean onChosenInlineResult(ChosenInlineResult chosenInlineResult) {
-        return false;
+    public void onChosenInlineResult(ChosenInlineResult chosenInlineResult) {
     }
 
     @Override
-    public boolean onCallbackQuery(CallbackQuery callbackQuery) {
-        return false;
+    public void onCallbackQuery(CallbackQuery callbackQuery) {
     }
 
 }
